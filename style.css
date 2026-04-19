@@ -82,7 +82,7 @@ header {
     text-align: center;
     transform: rotate(2deg);
     filter: grayscale(100%) contrast(80%) brightness(110%);
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
 .polaroid img {
@@ -92,6 +92,7 @@ header {
 .polaroid:hover {
     transform: rotate(0deg) scale(1.05);
     filter: grayscale(0%) contrast(110%) brightness(100%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
 }
 
 .polaroid:active {
