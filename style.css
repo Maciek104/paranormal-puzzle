@@ -1,0 +1,197 @@
+@font-face {
+    font-family: "Jolly Lodger";
+    src: url(assets/fonts/JollyLodger-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Special Elite";
+    src: url(assets/fonts/SpecialElite-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Lacquer";
+    src: url(assets/fonts/Lacquer-Regular.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Jolly Lodger", "Arial", sans-serif;
+    font-size: 2em;
+}
+
+h2 {
+    font-family: "Special Elite", "Arial", sans-serif;
+    font-size: 1.5em;
+}
+
+body {
+    background-image: url("assets/images/background.jpg");
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: black;
+    color: white;
+    font-family: "Jolly Lodger", "Arial", sans-serif;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.gradient-top {
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.polaroid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 48px;
+    padding-right: 48px;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.polaroid {
+    width: 200px;
+    background-color: white;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-family: "Lacquer", "Arial", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: rotate(2deg);
+    filter: grayscale(100%) contrast(80%) brightness(110%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.polaroid img {
+    width: 100%;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    filter: grayscale(0%) contrast(110%) brightness(100%);
+}
+
+.polaroid:active {
+    transform: rotate(0deg) scale(0.95);
+    filter: grayscale(0%) contrast(110%) brightness(100%);
+}
+
+.gradient-bottom {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    font-family: "Special Elite", "Arial", sans-serif;
+    font-size: 0.8em;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 48px;
+    width: 100%;
+    gap: auto;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.board-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    background: wheat;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+#board, #puzzle {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    width: 440px;
+    height: 440px;
+
+    gap: 2px;
+
+    padding: 0;
+    margin: 0;
+}
+
+.piece {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    cursor: grab;
+}
+
+.slot {
+    width: 100%;
+    height: 100%;
+    background-color: burlywood;
+    border: 2px dashed brown;
+}
+
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    #board, #puzzle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .polaroid {
+        width: 120px;
+        font-size: 0.8em;
+    }
+
+    .polaroid-container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
