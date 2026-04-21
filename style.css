@@ -229,11 +229,17 @@ footer {
     .row {
         flex-direction: column;
         gap: 48px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .board-section {
+        padding: 12px;
     }
 
     #board, #puzzle {
-        width: 280px;
-        height: 280px;
+        width: 270px;
+        height: 270px;
     }
 
     .polaroid {

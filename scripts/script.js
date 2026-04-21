@@ -103,10 +103,20 @@ function dragOver(e) {
 function dropPiece(e) {
     if (!draggedPiece) return;
 
-    e.target.innerHTML = "";
-    e.target.appendChild(draggedPiece);
+    const slot = e.target.classList.contains("slot") ? e.target : e.target.closest(".slot");
 
-    setTimeout(checkWin, 300);
+    if (slot) {
+        const existingPiece = slot.querySelector(".piece");
+
+        if (existingPiece && existingPiece !== draggedPiece) {
+            piecesContainer.appendChild(existingPiece);
+        }
+
+        slot.innerHTML = "";
+        slot.appendChild(draggedPiece);
+
+        setTimeout(checkWin, 300);
+    }
 }
 
 function checkWin() {

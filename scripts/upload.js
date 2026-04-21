@@ -2,7 +2,6 @@ const dropZone = document.getElementById("dropZone");
 const fileInput = document.getElementById("fileInput");
 
 dropZone.addEventListener("click", () => {
-    // Tworzymy input dynamicznie, jesli nie ma go w HTML
     if (!fileInput) {
         const input = document.createElement("input");
         input.type = "file";
@@ -43,10 +42,8 @@ function handleFile(file) {
     reader.onload = (e) => {
         const img = new Image();
         img.onload = () => {
-            // Usun zaznaczenie z innych polaroidow
             document.querySelectorAll(".polaroid").forEach(p => p.classList.remove("selected"));
             
-            // Wywolanie funkcji z pliku script.js
             if (typeof sliceImage === "function") {
                 sliceImage(img);
             } else {
