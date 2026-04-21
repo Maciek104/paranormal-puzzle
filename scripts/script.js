@@ -26,10 +26,15 @@ function loadImage(path) {
 
 function sliceImage(img) {
     const pieces = [];
+    
+    const minSide = Math.min(img.width, img.height);
+    const sx = (img.width - minSide) / 2;
+    const sy = (img.height - minSide) / 2;
+
+    const sourcePieceSize = minSide / SIZE;
 
     for (let y = 0; y < SIZE; y++) {
         for (let x = 0; x < SIZE; x++) {
-
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d");
 
@@ -38,10 +43,10 @@ function sliceImage(img) {
 
             ctx.drawImage(
                 img,
-                x * (img.width / SIZE),
-                y * (img.height / SIZE),
-                img.width / SIZE,
-                img.height / SIZE,
+                sx + (x * sourcePieceSize),
+                sy + (y * sourcePieceSize),
+                sourcePieceSize,
+                sourcePieceSize,
                 0,
                 0,
                 pieceSize,
@@ -54,7 +59,6 @@ function sliceImage(img) {
             piece.draggable = true;
 
             piece.dataset.correctIndex = y * SIZE + x;
-
             piece.addEventListener("dragstart", dragStart);
 
             pieces.push(piece);
@@ -102,7 +106,7 @@ function dropPiece(e) {
     e.target.innerHTML = "";
     e.target.appendChild(draggedPiece);
 
-    requestAnimationFrame(checkWin);
+    setTimeout(checkWin, 300);
 }
 
 function checkWin() {
