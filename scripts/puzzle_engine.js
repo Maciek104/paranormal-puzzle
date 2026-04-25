@@ -12,6 +12,8 @@ document.querySelectorAll(".polaroid").forEach(pol => {
         document.querySelectorAll(".polaroid").forEach(p => p.classList.remove("selected"));
         pol.classList.add("selected");
 
+        resetGame();
+
         selectedImage = pol.dataset.img;
         loadImage(selectedImage);
     });
