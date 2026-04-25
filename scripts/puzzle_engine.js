@@ -170,7 +170,20 @@ function stopTimer() {
     timerInterval = null;
 }
 
+function resetTimer() {
+    timerStarted = false;
+    startTime = null;
+    elapsedTime = 0;
+
+    clearInterval(timerInterval);
+    timerInterval = null;
+
+    timerDisplay.textContent = "0:00";
+}
+
 function resetGame() {
+    resetTimer();
+
     timerStarted = false;
     startTime = null;
     elapsedTime = 0;
