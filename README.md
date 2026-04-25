@@ -1,15 +1,50 @@
-# Paranormal Puzzle
-Gra logiczna z układanką 4x4, gdzie wybierasz po jednym z mrocznych zdjęć i układasz je z powrotem z losowo przemieszczonych fragmentów.
+# 👻 Paranormal Puzzle
 
-## Funkcjonalności
-- 🧩 Wybór jednego z trzech obrazków
-- 🔀 Losowe tasowanie fragmentów układanki
-- 🖱️ Przeciąganie elementów na planszę metodą drag and drop
-- ✅ Sprawdzenie poprawności ułożenia całości
-- 🎮 Prosty interfejs w stylu paranormalnym
+**Paranormal Puzzle** to gra logiczna typu sliding/drag puzzle w układzie 4x4, w której gracz wybiera jedno z mrocznych zdjęć i próbuje odtworzyć je z losowo pomieszanych fragmentów.
 
-## Technologia
-HTML, CSS, JavaScript
+Gra łączy prostą mechanikę układanki z klimatem paranormalnym i lekkim stylem horroru.
 
-## Autor
-Maciek104
+---
+
+## 🧩 Funkcje
+
+- 🖼️ Wybór jednego z kilku klimatycznych, „paranormalnych” obrazów  
+- 🔳 Możliwość załadowania własnego obrazu do gry
+- 🔀 Losowe tasowanie fragmentów układanki przy każdej rozgrywce  
+- 🖱️ Mechanika drag & drop (przeciąganie elementów na planszę)  
+- ⏱️ Timer mierzący czas ukończenia układanki  
+- ✅ Automatyczne sprawdzanie poprawności ułożenia  
+- 🪟 Okno wygranej z czasem ukończenia  
+- 📱 Podstawowa responsywność interfejsu  
+
+---
+
+## 🎮 Styl gry
+
+Projekt utrzymany jest w klimacie:
+- starych zdjęć
+- lekkiego horroru / paranormalnych motywów
+- „analogowego” stylu UI (polaroidy, papierowe elementy)
+
+---
+
+## 🛠️ Technologie
+
+- HTML5  
+- CSS3  
+- Vanilla JavaScript  
+
+---
+
+## 🚀 Możliwe rozszerzenia (future ideas)
+
+- zapis najlepszych czasów (localStorage)
+- więcej poziomów trudności (5x5, 6x6)
+- efekty dźwiękowe / VHS noise
+- tryb „hardcore” z ograniczonym czasem
+
+---
+
+## 👨‍💻 Autor
+
+**Maciek104**
