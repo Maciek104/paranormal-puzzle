@@ -37,6 +37,10 @@ dropZone.addEventListener("drop", (e) => {
 function handleFile(file) {
     if (!file) return;
 
+    if (typeof resetGame === "function") {
+        resetGame();
+    }
+
     const reader = new FileReader();
     
     reader.onload = (e) => {
